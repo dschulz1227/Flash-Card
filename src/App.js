@@ -11,6 +11,7 @@ function App() {
 
             {< FunctionClick />}
             {< Flashcard />}
+            {<Flashcard/>}
         </div>
     );
 }
