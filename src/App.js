@@ -8,12 +8,12 @@ function App() {
 
     return (
       <body>
-        <h1>Flashcards</h1>
-        <div>
+        <h1 className="row">Flashcards</h1>
+        <div className ="row">
 
-            {< FunctionClick />}
-            {< Flashcard/>}
-            {<Flashcard/>}
+            {/* {< FunctionClick />} */}
+            <div className="col">{< Flashcard/>} </div>
+            <div className="col">{<Flashcard/>}  </div>
         </div>
       </body>
     );

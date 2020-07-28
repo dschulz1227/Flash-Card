@@ -28,6 +28,11 @@ import { render } from '@testing-library/react';
 
 
 
+//I WANT TO GET CARD DATA, PUT TITLE ON FIRST CARD OF EACH STACK (REACT AND C#)
+//I WANT TO PUT QUESTION AND OPTIONS ON FRONT OF CARD
+//DISPLAY ANSWERS ON BACK OF CARD WHEN CLICKED
+
+
 export class Flashcard extends Component {
     render() {
         return (

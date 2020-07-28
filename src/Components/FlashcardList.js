@@ -1,10 +1,16 @@
 import React from 'react'
+import Flashcard from './Flashcard'
 
-function FlashcardList() {
+function FlashcardList({flashcards}) {
+    // return (     <div>     </div>
+
     return (
-        <div>
-            
+        <div className="card-grid">
+            {flashcards.map(flashcard => {
+                return <Flashcard flashcard={flashcard} key={flashcard.id}/>
+            })}
         </div>
+
     )
 }
 
