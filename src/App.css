@@ -10,11 +10,51 @@ body {
 h1 {
     display:grid;
     justify-content: center;
-    height:auto;
-    font-size: auto;
+    height:150px;
+    font-size: 50px;
 
 }
 
 [class*="col-"]{
     border: 1px solid red;
+}
+
+.row {
+    display:grid;
+    width:100%
+}
+
+.collectionOptions {
+    border-style: solid;
+    border-color: black;
+    height:auto;
+    width: 150px;
+
+
+}
+
+
+.stupid{
+
+display: grid;
+justify-content: center;
+align-items: center;
+background-color:red
+
+}
+
+.card{
+    display:flex;
+    justify-content: center;
+    border-style: solid;
+    font-size: 50px;
+    width: 400px;
+    height:200px;
+    
+    
+
+}
+
+Carousel:hover{
+    cursor: pointer;
 }
