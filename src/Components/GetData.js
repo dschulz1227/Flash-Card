@@ -12,7 +12,7 @@ class GetData extends React.Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         axios
             .get('http://localhost:5000/api/collections')
             .then((response) => {
@@ -22,16 +22,17 @@ class GetData extends React.Component {
     }
 
     render() {
-      const { collections } =this.state
+        const {collections} = this.state
         return (
+
             <div>
-              {
-              collections.length ?
-              collections.map(collections => <div key={collections.id}>{collections.title}</div> ):
-              null
-    }
+
+                {collections.length
+                    ? collections.map(collections => <div key={collections.id}>{collections.title}</div>)
+                    : null
+                }
             </div>
-            
+
         )
     }
 

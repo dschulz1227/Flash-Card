@@ -1,15 +1,43 @@
-import React from 'react'
+import React, { Component } from 'react'
 import GetData from './GetData';
 import '../app.css'
+import { render } from '@testing-library/react';
 
-function Flashcard() {
-    return (
-        <div className ="card">
-            <GetData/>
+// class Flashcard extends Component {
+
+
+
+//     return (
+//     <div className = "card-container">
+//         <div className ="card front">
+//             <GetData/>
         
             
-        </div>
-    )
+//         </div>
+//     </div>
+//     )
+//     render()
+//         return{
+
+//         }
+        
+//     }
+// }
+
+// export default Flashcard
+
+
+
+export class Flashcard extends Component {
+    render() {
+        return (
+            <div className = "card-container card">
+                <GetData/>
+                
+            </div>
+        )
+    }
 }
 
 export default Flashcard
+

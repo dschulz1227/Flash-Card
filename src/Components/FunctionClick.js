@@ -1,22 +1,32 @@
-// import React from 'react';
-// import img from '../Images'
+import React, {Component,setState} from 'react';
 
 
+class FunctionClick extends Component {
 
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            message: "hello"
+        }
+    }
 
-// function FunctionClick() {
+clickHandler(){
+    this.setState({
+        message:"goodbye!"
+    })
+}
 
-//     function clickHandler(){
+    render() {
+    return (
+        <div>
+            <div>
+                {this.state.message}
+            </div>
 
-//         console.log("Button Clicked")
-//     }
-
-
-//     return (
-//         <div>
-//             <button><img src="../src/Images/React-logo.png"  alt='' onClick={this.clickHandler} /> Click Button</button>
-//         </div>
-//     )
-// }
-
-// export default FunctionClick
+            <button onClick={this.clickHandler.bind(this)}>Click</button>
+        </div>
+    )
+}
+}
+export default FunctionClick
