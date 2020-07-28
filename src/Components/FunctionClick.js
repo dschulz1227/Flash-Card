@@ -1,5 +1,6 @@
 import React, {Component, setState} from 'react';
 import Flashcard from './Flashcard';
+import GetData from './GetData'
 
 class FunctionClick extends Component {
 
