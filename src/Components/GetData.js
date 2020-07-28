@@ -8,7 +8,7 @@ class GetData extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            collections: []
+            collections: [{}]
         }
     }
 
@@ -24,17 +24,14 @@ class GetData extends React.Component {
     render() {
         const {collections} = this.state
         return (
-          
 
             <div>
 
                 {collections.length
                     ? collections.map(collections => <div key={collections.id}>{collections.title}</div>)
                     : null
-                }
+}
             </div>
-
-            
 
         )
     }

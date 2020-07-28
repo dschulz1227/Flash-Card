@@ -7,15 +7,19 @@ import FunctionClick from './Components/FunctionClick';
 function App() {
 
     return (
-      <body>
-        <h1 className="row">Flashcards</h1>
-        <div className ="row">
+        <body>
+            <h1 className="row">Flashcards</h1>
+            <div className="row">
 
-            {/* {< FunctionClick />} */}
-            <div className="col">{< Flashcard/>} </div>
-            <div className="col">{<Flashcard/>}  </div>
-        </div>
-      </body>
+                {/* {< FunctionClick />} */}
+                <div className="col">
+                    {< Flashcard title = "React" />}
+                </div>
+                <div className="col">
+                    {< Flashcard title = "C#" />}
+                </div>
+            </div>
+        </body>
     );
 }
 
