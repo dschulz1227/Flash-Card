@@ -7,12 +7,15 @@ import FunctionClick from './Components/FunctionClick';
 function App() {
 
     return (
+      <body>
+        <h1>Flashcards</h1>
         <div>
 
             {< FunctionClick />}
-            {< Flashcard />}
+            {< Flashcard/>}
             {<Flashcard/>}
         </div>
+      </body>
     );
 }
 

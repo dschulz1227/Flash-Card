@@ -1,35 +1,54 @@
 
 
+h1{
+    display:grid;
+    width:100%;
+    justify-content:center;
+    border:solid rgb(55, 50, 50) 3px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    border-top: none;
+    border-width: thin;
+
+}
 
 
-.card-container {
+
+
+.cardContainer {
     cursor: pointer;
-    height: 300px;
-    width: 200px;
+    height: 200px;
+    width: 300px;
     perspective: 1000px;
     position: relative;
     transition: ease-in;
     word-wrap: break-word;
-  }
-  
-  .card {
-    height: 200px;
-    width: 300px;
-    position: absolute;
-    border: 1px solid #300;
-    transform-style: preserve-3d;
-    transition: all .2s ease-in-out;
-    font-size: medium;
-    align-items: center;
+
+}
+
+.card {
+    display: flex;
     justify-content: center;
-  }
-  
-  .card:hover {
-    transform: rotateY(180deg);
-    transition: all .2s ease-in-out;
-  }
-  
-  .card .front {
+    align-items: center;
+    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+    background-color: white;
+    transform-style: preserve-3d;
+    transition: 150ms;
+    cursor: pointer;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+}
+
+
+.card:hover {
+    --translate-y: -2px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+}
+
+
+
+.card .front {
     height: 200px;
     width: 300px;
     backface-visibility: hidden;
@@ -39,29 +58,41 @@
     justify-content: center;
     align-items: center;
     background: #353535;
-  }
-  
-  .card .back {
+
+}
+
+.card .back {
     height: 200px;
     width: 300px;
     text-align: center;
     transform: rotateY(180deg);
     background: #ccc;
-  }
-  
-  .question {
+
+}
+
+.question {
     color: #fff;
     font-size: 2.3em;
-  }
-  
-  .answer {
+}
+
+.answer {
     color: #333;
     font-size: 3em;
-    padding: 10% 10% 0 10%;
-  }
-  
-  .description {
+    padding: 10% 10% 0;
+}
+
+.description {
     color: rgba(200, 10, 10, 1);
     font-size: 1em;
     padding: 10%;
-  }
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 0 1.5rem;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+}

@@ -31,7 +31,7 @@ import { render } from '@testing-library/react';
 export class Flashcard extends Component {
     render() {
         return (
-            <div className = "card-container card">
+            <div className = "card cardContainer " >
                 <GetData/>
                 
             </div>
