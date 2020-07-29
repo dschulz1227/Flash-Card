@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import GetData from './GetData';
 import '../app.css'
 import {render} from '@testing-library/react';
 
@@ -10,7 +9,7 @@ import {render} from '@testing-library/react';
 // FIRST CARD OF EACH STACK (REACT AND C#) I WANT TO PUT QUESTION AND OPTIONS ON
 // FRONT OF CARD DISPLAY ANSWERS ON BACK OF CARD WHEN CLICKED
 
-export class Flashcard extends Component {
+class Flashcard extends Component {
 
     constructor(props) {
         super(props)
@@ -18,14 +17,15 @@ export class Flashcard extends Component {
         this.state = {}
     }
 
-    render() {
-        return (
-            <div className="card cardContainer ">
-                <GetData/>
-
-            </div>
-        )
-    }
+    render(){
+        return(
+    <div>
+        {/* <p className="card cardContainer"> {this.props.displayText} </p>   */}
+        <p className="card cardContainer"> {this.props.displayText} </p>
+    </div>
+        );
+      };
 }
 
-export default Flashcard
+
+export default Flashcard;
