@@ -1,7 +1,7 @@
 import React from 'react';
 import './app.css'
-import Flashcard from './Components/Flashcard';
-import FunctionClick from './Components/FunctionClick';
+import Frontcard from './Components/Flashcard';
+import FlipCard from './Components/FlipCard';
 import axios from 'axios';
 
 
@@ -39,8 +39,8 @@ import axios from 'axios';
           <body>
             <h1 className="jumbotron"> Flashcards </h1>
             <div>
-              <Flashcard displayText={this.state.data[0].title} />
-              <Flashcard displayText={this.state.data[0].cards[0].word} />
+              <p className="row"> <Frontcard displayText={this.state.data[0].title} /> </p>
+              <p className="row"> <Frontcard displayText={this.state.data[1].title} /> </p>
             </div>
             {/* <div>
                 {collections.length ? collections.map(collections => <div key={collections.id}>{collections.title}</div>)
@@ -55,3 +55,4 @@ import axios from 'axios';
 
   export default App;
 
+/* <Flashcard displayText={this.state.data[0].cards[0].word} />    <----THIS GIVES WORD OF FIRST CARD IN REACT STACK*/   

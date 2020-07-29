@@ -8,7 +8,13 @@
     height: 100%;
 }
 
-
+.parentCards{
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   
+    
+}
     
 
 
@@ -34,11 +40,7 @@ h1:hover{
 body{
     display: grid;
     width:100%;
-    max-height: max-content;
-    justify-content:space-evenly;
-    direction: ltr;
-    
-    
+    max-height: max-content;    
 }
 
 
@@ -66,6 +68,7 @@ body{
     transition: 150ms;
     cursor: pointer;
     transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+    margin-left:25px;
 
     
 }
