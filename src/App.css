@@ -44,7 +44,7 @@ body{
 }
 
 
-.cardContainer {
+.titleContainer {
     cursor: pointer;
     height: 200px;
     width: 300px;
@@ -69,6 +69,8 @@ body{
     cursor: pointer;
     transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
     margin-left:25px;
+    height:200px;
+    width:300px
 
     
 }
@@ -89,24 +91,29 @@ body{
 
 
 
-.card .front,
+/* .card .front,
 .card .back {
   position: absolute;
   padding: 1rem;
   backface-visibility: hidden;
+  
 }
-
-.card .back {
+*/
+.back {
     transform: rotateY(180deg);
   }
 
 
-
+/*
 .card .front {
   left: 0;
+} */
+
+.front{
+    position: absolute;
+    padding: 1rem;
+    backface-visibility: hidden;
 }
-
-
 
 
 

@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class CardFront extends Component {
-    render() {
+export default function CardFront (props){
         return (
             <div>
-                
+                <div>{props.displayThing}</div>
             </div>
         )
     }
-}
 
-export default CardFront
+
+

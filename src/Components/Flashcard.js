@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
+import CardFront from '../Components/CardFront'
+import CardBack from '../Components/CardBack'
 import '../app.css'
-import {render} from '@testing-library/react';
+
 
 // class Flashcard extends Component {     return (     <div className =
 // "card-container">         <div className ="card front">
@@ -14,17 +16,26 @@ class Flashcard extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {}
+        this.state = {
+            cardFlipped : false
+        }
     }
 
     render(){
         return(
     <div>
-        {/* <p className="card cardContainer"> {this.props.displayText} </p>   */}
-        <p className="card cardContainer"> {this.props.displayText} </p>
+        {!this.state.cardFlipped?
+            <CardFront displayThing={this.props.displayText.title}/> //pass props
+        :
+            <CardBack/>
+        }
+        
+
+        
+        {/* <p className="card titleContainer"> {this.props.displayText.definition} </p> */}
     </div>
         );
-      };
+    };
 }
 
 
