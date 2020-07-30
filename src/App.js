@@ -31,8 +31,10 @@ class App extends React.Component {
         for(let i = 0 ; i <data[0].cards.length; i++){
             thing.push(<Flashcard flashcard={data[0].cards[i].definition} key={i}/>)
             thing.push(<Flashcard flashcard={data[0].cards[i].word} key={i}/>)
+            thing.push(<Flashcard flashcard={data[1].cards[i].definition} key={i}/>)
+            thing.push(<Flashcard flashcard={data[1].cards[i].word} key={i}/>)
         }
-        
+        console.log(thing)
         return thing;
     }
 
@@ -55,21 +57,20 @@ class App extends React.Component {
                         {this.GetList(this.state.data)}
                         */THESE ARE THE MAIN DECK, THEY NEED GENEREATE LIST LOGIC/*
 
-                        <div className="titleContainer">
-                            <p className="card">
+                        {/* <div className="titleContainer">
+                            <p>
                                 <Flashcard displayText={this.state.data[0]}/>
                             </p>
                             <p className="card">
                                 <Flashcard displayText={this.state.data[1]}/>
                             </p>
                         </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                         <div>
                             <div className="card" >
                                 <FlashFlip displayText={this.state.data[0].cards[0]}/>
 
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </body>
             )

@@ -15,7 +15,7 @@ function Flashcard (props){
 
    
         return (
-            <div>
+            <div className="card cardContainer">
                 {props.flashcard}
                 {/* <CardFront displayThing={props.flashcard.word}/> <p className="card titleContainer"> {this.props.displayText.definition} </p> */}
             </div>

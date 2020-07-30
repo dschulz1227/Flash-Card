@@ -40,20 +40,24 @@ h1:hover{
 body{
     display: grid;
     width:100%;
-    max-height: max-content;  
+    max-height: max-content;
+    padding-left: 10px;  
+    padding-right: 10px;
      
 }
 
 
-.titleContainer {
+.cardContainer {
+    display: grid;
     cursor: pointer;
     height: 200px;
     width: 300px;
     perspective: 1000px;
     position: relative;
     transition: ease-in;
-    word-wrap: break-word;
     margin-top: 15px;
+    justify-content: center;
+    padding:25px;
 
 }
 
