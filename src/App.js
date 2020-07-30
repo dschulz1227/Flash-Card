@@ -3,6 +3,8 @@ import './app.css'
 import axios from 'axios';
 import Flashcard from './Components/Flashcard';
 import CardFront from './Components/CardFront'
+import FlashFlip from './Components/FlashFlip'
+// import FlashcardList from './Components/FlashcardList'
 
 class App extends React.Component {
 
@@ -24,6 +26,16 @@ class App extends React.Component {
             });
     };
 
+    GetList=(data)=>{
+        let thing = [];
+        for(let i = 0 ; i <data[0].cards.length; i++){
+            thing.push(<Flashcard flashcard={data[0].cards[i].definition} key={i}/>)
+            thing.push(<Flashcard flashcard={data[0].cards[i].word} key={i}/>)
+        }
+        
+        return thing;
+    }
+
     render() {
         if (this.state.loading === true) {
             return (
@@ -35,11 +47,12 @@ class App extends React.Component {
             return (
                 <body>
                     <div>
+                        {/* <FlashcardList/> */}
 
                         <h1 className="jumbotron">
                             Flashcards
                         </h1>
-
+                        {this.GetList(this.state.data)}
                         */THESE ARE THE MAIN DECK, THEY NEED GENEREATE LIST LOGIC/*
 
                         <div className="titleContainer">
@@ -50,10 +63,10 @@ class App extends React.Component {
                                 <Flashcard displayText={this.state.data[1]}/>
                             </p>
                         </div>
-
-                        <div className="container-fluid">
-                            <div>
-                                <Flashcard className="card" displayText={this.state.data[0].cards[0]}/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <div>
+                            <div className="card" >
+                                <FlashFlip displayText={this.state.data[0].cards[0]}/>
 
                             </div>
                         </div>
