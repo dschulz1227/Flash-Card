@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import CardFront from '../Components/CardFront'
 import '../app.css'
+import Card from '../Components/Card'
+
 
 // class Flashcard extends Component {     return (     <div className =
 // "card-container">         <div className ="card front"> <GetData/> </div>
@@ -9,18 +10,27 @@ import '../app.css'
 // (REACT AND C#) I WANT TO PUT QUESTION AND OPTIONS ON FRONT OF CARD DISPLAY
 // ANSWERS ON BACK OF CARD WHEN CLICKED
 
-function Flashcard (props){
 
-   
+class FlashcardDisplay extends Component {
 
-   
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            cardInfo: this.props.cardstack
+            
+        };
+        // console.log(this.props.cardstack)
+    }
+
+    render() {
         return (
-            <div className="card cardContainer">
-                {props.flashcard}
-                {/* <CardFront displayThing={props.flashcard.word}/> <p className="card titleContainer"> {this.props.displayText.definition} </p> */}
-            </div>
-        );
-    
+          <div  >
+        <Card cardInfo = {this.state.cardInfo}/>
+           </div>
+        )
+    }
 }
 
-export default Flashcard;
+export default FlashcardDisplay
+

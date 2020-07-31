@@ -26,21 +26,29 @@ h1{
     padding-top: 25px;
     border-top: none;
     border-width: thin;
-    width:auto
+    width:auto;
+    
+    
 
 
 }
 
 .my-row{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: row;
+    margin: 10px;
 }
 
 .headButton{
-    width:50px;
-    height:25px;
+    width:auto;
+    height:auto;
     font-size: medium;
+    margin-top: 25px;
+    margin-bottom:-50px;
+    background-color:white;
+    margin: 10px;
+    
 }
 
 h1:hover{
@@ -50,7 +58,7 @@ h1:hover{
 }
 
 body{
-    display: grid;
+    display: flexbox;
     width:100%;
     max-height: max-content;
     padding-left: 10px;  
