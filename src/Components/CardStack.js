@@ -21,7 +21,9 @@ constructor(props) {
 
         return (
             <div>
-               <FlashcardDisplay cardstack = {this.props.cardStack}/>
+               {/* <FlashcardDisplay cardstack = {this.props.cardStack}/> */}
+              {/* <FlashcardDisplay cardStack = {this.props.cardstack} key={this.cardStack.title}/> */}
+                        
             </div>
         )
     }
