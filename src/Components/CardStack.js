@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FlashcardDisplay from './CardDisplay'
+import Collections from '../Components/Collections'
 
 class CardStack extends Component {
 
@@ -7,7 +8,7 @@ constructor(props) {
     super(props)
 
     this.state = {
-        cardstack: this.props.cardStack,
+        cardstack: this.props.title,
         index:''
     
     }

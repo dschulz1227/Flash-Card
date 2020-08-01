@@ -7,11 +7,11 @@ export class Collections extends Component {
         super(props)
 
         this.state = {
-            cardStacks: [],
-            key:'index'
+            stackofCards: [this.props.cardStacks],
+            key:'i'
 
         }
-        console.log([this.props])
+        console.log(this.state.stackofCards)
 
         // console.log(props.cardStacks)
         // console.log(this.props.cardStacks)
@@ -26,16 +26,14 @@ export class Collections extends Component {
             <div>
                {this
                     .state 
-                    .cardStacks
+                    
+                    .stackofCards
+                    
                     .map((cardStack, i) => 
-                    <CardStack 
+                    
+                    <CardStack
                         cardStack={cardStack}
-                        key={[i].id}
-                        
-                        
-                        // onClick={() => this.props.onClick(index)}
-                        // isActive={this.props.currentCardStackindex === index}/>)}
-                        />)}       
+                        key={[i]}/>)}       
             </div>
         )
     }

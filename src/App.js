@@ -5,15 +5,15 @@ import FlashcardDisplay from './Components/CardDisplay';
 import Collections from './Components/Collections'
 import CardStack from './Components/CardStack';
 import Card from './Components/Card'
-import Practice from './Components/Practice'
 
 class App extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            cardStacks: [],
+            cardStacks: {},
             // currentCardStackIndex: 0,
+            key:'',
             loading: true
 
         }
@@ -25,18 +25,16 @@ class App extends React.Component {
         axios
             .get(flashcardAPIendpoint)
             .then((response) => {
-                const Stacks = response.data;
-                let myJson = JSON.stringify(Stacks)
-                console.log(Stacks);
-                console.log(myJson)
+                const data = [response.data];
+                console.log(data);
                 this.setState({
-                    cardStacks: [Stacks],
-                    // currentCardStackIndex: 0,
+                    cardStacks: data,
                     loading: !true
                 });
+                console.log(this.state.cardStacks)
             });
-    };
 
+    };
     // THIS FUNCTION TAKES API DATA AND STORES IT INTO ARRAYS GetList=(data)=>{ let
     // thing = [];     for(let i = 0 ; i <data[0].cards.length; i++){
     // thing.push(<Flashcard flashcard={data[0].cards[i].definition} key={i}/>)
@@ -73,9 +71,8 @@ class App extends React.Component {
                                 </button>
                                 <button className="headButton">Next Card
                                 </button>
-
                                 <div>
-                                    {/* <Practice Stacks={this.state.Stacks}/> */}
+                                    <Collections Stacks={this.state.cardStacks[0].title}/> 
                                 </div>
 
                             </div>
@@ -83,16 +80,14 @@ class App extends React.Component {
                         </header>
                     </div>
                     <div className="card">
-                        {/* <Collections Stacks={this.state.cardStacks.title}/>  */}
-
+                        {/* {this.state.data} */}
                     </div>
-                    <ul>
+                    {/* <ul>
+                    {this.state.data.map(i => <li>{i}</li>)}
+                    </ul> */}
 
-                        {this.state.Stacks[0].map(title => (
-                            <li>{title}</li>
-                        ))}
-                    </ul>
 
+                    
                 </body>
             )
         }
