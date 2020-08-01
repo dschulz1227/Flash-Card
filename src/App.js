@@ -30,7 +30,7 @@ class App extends React.Component {
                 console.log(Stacks);
                 console.log(myJson)
                 this.setState({
-                    cardStacks: Stacks,
+                    cardStacks: [Stacks],
                     // currentCardStackIndex: 0,
                     loading: !true
                 });
@@ -83,9 +83,15 @@ class App extends React.Component {
                         </header>
                     </div>
                     <div className="card">
-                        <Collections Stacks={this.state.cardStacks.title}/> 
-                        />
+                        {/* <Collections Stacks={this.state.cardStacks.title}/>  */}
+
                     </div>
+                    <ul>
+
+                        {this.state.Stacks[0].map(title => (
+                            <li>{title}</li>
+                        ))}
+                    </ul>
 
                 </body>
             )
