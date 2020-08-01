@@ -14,7 +14,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             cardStacks: [],
-            currentCardStackIndex: 0,
+            // currentCardStackIndex: 0,
             loading: true
 
         }
@@ -29,8 +29,8 @@ class App extends React.Component {
                 const Stacks = response.data;
                 console.log(Stacks);
                 this.setState({
-                    Stacks: Stacks,
-                    currentCardStackIndex: 0,
+                    cardStacks: Stacks,
+                    // currentCardStackIndex: 0,
                     loading: !true
                 });
             });
@@ -57,12 +57,13 @@ class App extends React.Component {
             return (null)
 
         } else {
+            
             return (
                 <body>
                     <div>
                         <header>
                             <h1 className="jumbotron">
-                                dev Flashcards
+                                flashcards
                              </h1>  
                                 <div className="my-row">
                                     <button className="headButton">Previous Card
@@ -85,7 +86,7 @@ class App extends React.Component {
                         </header>
                     </div>
                     <div className="card">
-                    <Collections Stacks={this.state.cardStacks}/>
+                    <Collections Stacks={this.state.cardStacks} />
                     
                 
 
@@ -122,3 +123,7 @@ export default App;
                                 <FlashFlip displayText={this.state.data[0].cards[0]}/>
                             </div>
                             </div> */
+
+
+
+                            // Active ={this.state.currentCardStackIndex} onClick ={this.props.onClick}   ADDDITIONAL PROPS FOR COLLECTIONS CALL

@@ -34,3 +34,4 @@ class FlashcardDisplay extends Component {
 
 export default FlashcardDisplay
 
+// this.state.cardInfo.cards[this.state.currentCard]

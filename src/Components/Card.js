@@ -21,7 +21,7 @@ import FlashCardDisplay from '../Components/CardDisplay'
     render() {
         return (
             <div>
-                {this.state.card}
+                {/* {this.state.card} */}
             </div>
         )
     }

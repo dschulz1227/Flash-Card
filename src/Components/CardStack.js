@@ -7,7 +7,8 @@ constructor(props) {
     super(props)
 
     this.state = {
-        cardstack: this.props.cardStack
+        cardstack: this.props.cardStack,
+        index:''
     
     }
     // console.log(this.props.cardStacks)
@@ -19,7 +20,7 @@ constructor(props) {
 
 
         return (
-            <div className="card">
+            <div>
                <FlashcardDisplay cardstack = {this.props.cardStack}/>
             </div>
         )
