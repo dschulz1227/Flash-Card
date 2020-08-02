@@ -8,7 +8,7 @@ import FlashCardDisplay from '../Components/CardDisplay'
     
         this.state = {
 
-            card: this.props.cardInfo
+            card: this.props.card
 
             // isFlipped: false
             
@@ -21,7 +21,7 @@ import FlashCardDisplay from '../Components/CardDisplay'
     render() {
         return (
             <div>
-                {/* {this.state.card} */}
+                {this.state.card.word}
             </div>
         )
     }
