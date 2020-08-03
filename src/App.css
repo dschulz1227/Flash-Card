@@ -1,5 +1,8 @@
 
-
+.collections{
+    display: flex;
+    justify-content: center;
+}
 
 .center{
     justify-content: center;
@@ -46,8 +49,12 @@ h1{
     font-size: medium;
     margin-top: 25px;
     margin-bottom:-50px;
-    background-color:white;
+    background-color: white;
+    opacity: .5;
     margin: 10px;
+    margin-bottom: 100px;
+    font-weight: bold;
+
     
 }
 
@@ -97,7 +104,9 @@ body{
     transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
     margin-left:25px;
     height:200px;
-    width:300px   
+    width:300px ;
+    
+
 }
 
 .fcard {

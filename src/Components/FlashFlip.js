@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../app.css';
 import ReactCardFlip from 'react-card-flip';
+import Card from '../Components/Card'
 
 
 // class Flashcard extends Component {     return (     <div className =
@@ -31,9 +32,9 @@ class FlashFlip extends React.Component {
     <button onClick={this.handleClick}>Click Button</button>
 
       {!this.state.cardFlipped?
-          <CardFront displayThing={this.props.displayText.word}/> //pass props
+          <Card displayThing={this.props.card.word}/> //pass props
       :
-          <CardBack displayThing={this.props.displayText.definition} />
+          <Card displayThing={this.props.card.definition} />
       }
       
 

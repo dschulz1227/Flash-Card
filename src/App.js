@@ -20,7 +20,8 @@ class App extends React.Component {
     }
 
     //THIS IS THE GET REQUEST CALLED WHILE APP IS RENDERING
-    componentDidMount() {
+
+    getAllCollections() {
         let flashcardAPIendpoint = 'http://localhost:5000/api/collections'
         axios
             .get(flashcardAPIendpoint)
@@ -36,24 +37,34 @@ class App extends React.Component {
                 console.log(this.state.collections)
             });
 
+    }
+
+    componentDidMount() {
+        this.getAllCollections();
     };
 
-
-    
-
     // THIS IS THE POST REQUEST FUNCTION
-    postData = () => {
-        axios.post('http://localhost:5000/api/collections', {
-            Word: '',
-            Definition: ''
-        })
-    }
+    // SubmitNewCard() {
+    //     let word = document
+    //         .getElementById("word")
+    //         .value;
+    //     let definition = document
+    //         .getElementById("definition")
+    //         .value;
 
+    //     // alert('word ' + word);
+    //     // alert('definition', definition);
 
-    updateCurrent(onClick) {
-        this.setState({currentCollection: this.state.currentCollection})
-        
-    }
+    //     axios
+    //         .post('http://localhost:5000/api/collections/' + this.state.collections[this.state.currentCollection]._id + '/cards', {
+    //         "word": word,
+    //         "definition": definition
+    //     })
+
+    //     this.getAllCollections()
+    // }
+
+    //need change stack function
 
     render() {
         if (this.state.loading) {
@@ -66,26 +77,43 @@ class App extends React.Component {
                         <h1 className="jumbotron">
                             flashcards
                         </h1>
-                        
+
                     </header>
                 </div>
+                
                 <div className="collections">
-                    {
-                        this.state.collections.map((c, i) => {
+                    {this
+                        .state
+                        .collections
+                        .map((c, i) => {
                             return (
                                 <div>
-                                    <Collections buttonClick={this.updateCurrent.bind(this)} collection={c} Key={i}/>
+                                    <Collections collection={c} Key={i}/>
                                 </div>
                             )
-                        }
-                        )
-                    }
+                        })
+}
                 </div>
                 <div className="cards">
-                    {
-                        <CardDisplay cards={this.state.currentCollection.cards} />
-                    }
+                    < CardDisplay cards = {
+                        this.state.currentCollection.cards
+                    } />
+
                 </div>
+               
+                {/* <div>
+                    <form >
+                        <label>
+                            Word -
+                            <input id="word" type="text"/>
+                        </label>
+                        <label>
+                            Definition -
+                            <input id="definition" type="text"/>
+                        </label>
+                        <input type="submit" value="Submit" onClick={() => this.SubmitNewCard()}/>
+                    </form>
+                </div> */}
             </div>
         )
     }
@@ -93,25 +121,3 @@ class App extends React.Component {
 
 export default App;
 
-/* <Flashcard displayText={this.state.data[0].cards[0].word} />    <----THIS GIVES WORD OF FIRST CARD IN REACT STACK*/
-
-/* <button onClick={() => this.GetList(this.state.data)}>Click Me</button> */
-/* {this.GetList(this.state.data)}                         */
-
-// eslint-disable-next-line no-lone-blocks
-/* <div className="titleContainer">
-                            <p>
-                                <Flashcard displayText={this.state.data[0].title}/>
-                            </p>
-                            <p className="card">
-                                <Flashcard displayText={this.state.data[1].title}/>
-                            </p>
-                            </div>
-                            <div>
-                            <div className="card" >
-                                <FlashFlip displayText={this.state.data[0].cards[0]}/>
-                            </div>
-                            </div> */
-
-// Active ={this.state.currentCardStackIndex} onClick ={this.props.onClick}
-// ADDDITIONAL PROPS FOR COLLECTIONS CALL

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import '../app.css'
 import Card from '../Components/Card'
+import axios from 'axios'
 
 // class Flashcard extends Component {     return (     <div className =
 // "card-container">         <div className ="card front"> <GetData/> </div>
@@ -28,7 +29,9 @@ class CardDisplay extends Component {
             .cards
             .map((card, i) => {
                 if (card._id === this.state.currentCard._id && i > 0) {
-                    this.setState({currentCard: this.state.cards[i - 1]})
+                    this.setState({
+                        currentCard: this.state.cards[i - 1]
+                    })
                     return this.state.currentCard;
                 }
                 return this.state.currentCard;
@@ -42,7 +45,9 @@ class CardDisplay extends Component {
             .cards
             .map((card, i) => {
                 if (card._id === this.state.currentCard._id && i < l) {
-                    this.setState({currentCard: this.state.cards[i + 1]})
+                    this.setState({
+                        currentCard: this.state.cards[i + 1]
+                    })
                     return this.state.currentCard;
                 }
                 return this.state.currentCard;
@@ -51,22 +56,33 @@ class CardDisplay extends Component {
     }
 
     render() {
+
         return (
             <div>
                 <div className="my-row">
                     <button onClick={this.getPrevious} className="headButton">Previous Card</button>
-                    <button className="headButton">Add Card</button>
+                    {/* <button onClick={this.postData} className="headButton">Add Card</button> */}
                     <button onClick={this.getNext} className="headButton">Next Card</button>
+
                 </div>
-                <div>
-                    {this.state.currentCard.word}
+                <div className ="collections">
+                <div className="card">
+                    <div
+                        style={{
+                        fontWeight: "bolder"
+                    }}>
+                        {this.state.currentCard.word}
+                    </div>
+                    <br/>
+                    <div>{this.state.currentCard.definition}</div>
                     <Card card={this.state.currentCard}/>
                 </div>
+                </div>
+                
+
             </div>
         )
     }
 }
 
 export default CardDisplay
-
-// this.state.cardInfo.cards[this.state.currentCard]

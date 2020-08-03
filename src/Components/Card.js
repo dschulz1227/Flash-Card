@@ -1,27 +1,25 @@
-import React, { Component } from 'react'
-import FlashCardDisplay from '../Components/CardDisplay'
+import React, {Component} from 'react'
+import CardDisplay from '../Components/CardDisplay'
+import FlashFlip from '../Components/FlashFlip'
 
- class Card extends Component {
+class Card extends Component {
 
     constructor(props) {
         super(props)
-    
+
         this.state = {
 
-            card: this.props.card
+            card: this.props.card,
 
             // isFlipped: false
-            
-             
+
         }
     }
-    
-
 
     render() {
         return (
             <div>
-                {this.state.card.word}
+                {/* <CardDisplay/> */}
             </div>
         )
     }
