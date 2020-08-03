@@ -59,6 +59,7 @@ class CardDisplay extends Component {
 
         return (
             <div>
+                
                 <div className="my-row">
                     <button onClick={this.getPrevious} className="headButton">Previous Card</button>
                     {/* <button onClick={this.postData} className="headButton">Add Card</button> */}
@@ -66,7 +67,7 @@ class CardDisplay extends Component {
 
                 </div>
                 <div className ="collections">
-                <div className="card">
+                <div className="card front">
                     <div
                         style={{
                         fontWeight: "bolder"
@@ -75,7 +76,8 @@ class CardDisplay extends Component {
                     </div>
                     <br/>
                     <div>{this.state.currentCard.definition}</div>
-                    <Card card={this.state.currentCard}/>
+
+                    {/* <Card cardFront={this.state.currentCard.word} cardBack={this.state.currentCard.definition}/> */}
                 </div>
                 </div>
                 

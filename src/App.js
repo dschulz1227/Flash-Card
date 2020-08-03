@@ -44,6 +44,8 @@ class App extends React.Component {
     };
 
     // THIS IS THE POST REQUEST FUNCTION
+
+
     // SubmitNewCard() {
     //     let word = document
     //         .getElementById("word")
@@ -70,6 +72,8 @@ class App extends React.Component {
         if (this.state.loading) {
             return (null)
         }
+
+
         return (
             <div>
                 <div>
@@ -95,10 +99,11 @@ class App extends React.Component {
 }
                 </div>
                 <div className="cards">
-                    < CardDisplay cards = {
-                        this.state.currentCollection.cards
-                    } />
+                    < CardDisplay cards = { this.state.currentCollection.cards} />
 
+                </div>
+                <div>
+                    {/* <Card cardFront = {this.state.currentCard.word } cardBack ={this.state.currentCard.definition}/> */}
                 </div>
                
                 {/* <div>

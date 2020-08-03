@@ -1,28 +1,43 @@
-import React, {Component} from 'react'
-import CardDisplay from '../Components/CardDisplay'
-import FlashFlip from '../Components/FlashFlip'
+// import React, {Component} from 'react'
+// import CardDisplay from '../Components/CardDisplay'
+// import FlashFlip from '../Components/FlashFlip'
+// import ReactCardFlip from 'react-card-flip';
 
-class Card extends Component {
+// class Card extends Component {
 
-    constructor(props) {
-        super(props)
+//     constructor(props) {
+//         super(props)
 
-        this.state = {
+//         this.state = {
+//             cardFront: this.props.word,
+//             carBack: this.props.definition,
+//             isFlipped: false
 
-            card: this.props.card,
+//         };
+//         this.handleClick = this
+//             .handleClick
+//             .bind(this)
+//     }
+//     handleClick() {
+//         this.setState(prevState => ({
+//             isFlipped: !prevState.isFlipped
+//         }))
+//     }
+        
+//     render() {
+//         return (
+//             <div>
 
-            // isFlipped: false
+//                 <button onClick={this.handleClick}>Click Button</button>
 
-        }
-    }
+//                 {!this.state.cardFlipped
+//                     ? <Card cardFront={this.state.word}/> //pass props
+//                     : <Card cardBack={this.state.definition}/>
+//                 }
 
-    render() {
-        return (
-            <div>
-                {/* <CardDisplay/> */}
-            </div>
-        )
-    }
-}
+//             </div>
+//         );
+//     };
+// }
 
-export default Card
+//     export default Card
