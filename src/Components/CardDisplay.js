@@ -1,9 +1,11 @@
-import React, {Component} from 'react'
+import React, {Component, useEffect, useState} from 'react'
 import '../app.css'
 import Card from '../Components/Card'
 import axios from 'axios'
+import CardFront from '../Components/cardFront'
+import CardBack from '../Components/cardBack'
 
-// class Flashcard extends Component {     return (     <div className =
+//  class Flashcard extends Component {     return (     <div className =
 // "card-container">         <div className ="card front"> <GetData/> </div>
 // </div>     )     render()         return{   }     } } export default
 // Flashcard I WANT TO GET CARD DATA, PUT TITLE ON FIRST CARD OF EACH STACK
@@ -17,12 +19,19 @@ class CardDisplay extends Component {
 
         this.state = {
             cards: this.props.cards,
-            currentCard: this.props.cards[0]
+            currentCard: this.props.cards[0],
+            isFlipped: false,
+            sideOne: null,
+            sideTwo: null
         };
         console.log(this.props.cards)
     }
-
-    //getPrevious, getNext, add functions live here
+    componentDidUpdate(prevProps) {
+        if (prevProps.cards[0].word != this.props.cards[0].word) {
+            this.setState({cards: this.props.cards})
+        }
+    }
+    // getPrevious, getNext, add functions live here
     getPrevious = () => {
         this
             .state
@@ -37,7 +46,9 @@ class CardDisplay extends Component {
                 return this.state.currentCard;
             })
     }
-
+    componentWillReceiveProps(nextProps) {
+        this.setState({cards: nextProps.cards})
+    }
     getNext = () => {
         let l = this.state.cards.length - 1;
         this
@@ -55,35 +66,45 @@ class CardDisplay extends Component {
 
     }
 
+    handleClick = () => {
+        if (this.state.isFlipped === false) {
+            this.setState({
+                isFlipped: !false
+
+            })
+        };
+    }
+
+    // handleFlip =() => {     if(this.state.isFlipped === true){
+    // {this.state.currentCard.defintion}     } }
+
     render() {
 
         return (
             <div>
-                
+
                 <div className="my-row">
                     <button onClick={this.getPrevious} className="headButton">Previous Card</button>
                     {/* <button onClick={this.postData} className="headButton">Add Card</button> */}
                     <button onClick={this.getNext} className="headButton">Next Card</button>
+                </div>
 
+                <div className="my-row">
+                    <button className="headButton" onClick={this.state.currentCard.definition}>Show Back</button>
                 </div>
-                <div className ="collections">
-                <div className="card front">
-                    <div
-                        style={{
-                        fontWeight: "bolder"
-                    }}>
-                        {this.state.currentCard.word}
-                    </div>
-                    <br/>
-                    <div>{this.state.currentCard.definition}</div>
 
-                    {/* <Card cardFront={this.state.currentCard.word} cardBack={this.state.currentCard.definition}/> */}
+                <div
+                    className="card"
+                    style={{
+                    fontWeight: "bolder"
+                }}>
+
+                    {this.state.currentCard.word}
                 </div>
-                </div>
-                
 
             </div>
-        )
+
+        );
     }
 }
 

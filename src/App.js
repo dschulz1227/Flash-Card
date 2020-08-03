@@ -1,10 +1,12 @@
 import React from 'react';
 import './app.css'
 import axios from 'axios';
-import FlashcardDisplay from './Components/CardDisplay';
 import Collections from './Components/Collections'
 import Card from './Components/Card'
 import CardDisplay from './Components/CardDisplay';
+import CardFront from './Components/cardFront'
+import CardBack from './Components/cardBack'
+import { Row } from 'react-bootstrap';
 
 class App extends React.Component {
 
@@ -12,9 +14,10 @@ class App extends React.Component {
         super(props);
         this.state = {
             collections: {},
-            currentCollection: {},
+            currentCollection: null,
             key: '',
-            loading: true
+            loading: true,
+            
 
         }
     }
@@ -30,7 +33,7 @@ class App extends React.Component {
                 console.log(data);
                 this.setState({
                     collections: data,
-                    currentCollection: data[0],
+                    
                     loading: !true,
                     currentCard: data[0].cards[0]
                 });
@@ -42,7 +45,12 @@ class App extends React.Component {
     componentDidMount() {
         this.getAllCollections();
     };
-
+    selectCurrentStack=(id)=>{
+        console.log("hello")
+        this.setState({
+            currentCollection: this.state.collections[id]
+        })
+    }
     // THIS IS THE POST REQUEST FUNCTION
 
 
@@ -67,7 +75,15 @@ class App extends React.Component {
     // }
 
     //need change stack function
-
+    GenerateCardStacks=()=>{
+        let elements =[]
+        for(let i = 0; i< this.state.collections.length;i++){
+            elements.push(<div>
+            <button onClick={() => this.selectCurrentStack(i)}><Collections collection={this.state.collections[i]} key={this.state.collections[i]}/></button>
+        </div>)
+        }
+        return elements;
+    }
     render() {
         if (this.state.loading) {
             return (null)
@@ -85,40 +101,24 @@ class App extends React.Component {
                     </header>
                 </div>
                 
-                <div className="collections">
-                    {this
-                        .state
-                        .collections
-                        .map((c, i) => {
-                            return (
-                                <div>
-                                    <Collections collection={c} Key={i}/>
-                                </div>
-                            )
-                        })
-}
+                <div style={{flexDirection: "row"}}className="collections">
+                    {this.GenerateCardStacks()}
+                    
+                 
+
                 </div>
-                <div className="cards">
-                    < CardDisplay cards = { this.state.currentCollection.cards} />
+                <div className="cards my-row">
+                    {this.state.currentCollection !==null?
+            
+                    < CardDisplay cards = {this.state.currentCollection.cards} />
+                    :null}
 
                 </div>
                 <div>
                     {/* <Card cardFront = {this.state.currentCard.word } cardBack ={this.state.currentCard.definition}/> */}
                 </div>
                
-                {/* <div>
-                    <form >
-                        <label>
-                            Word -
-                            <input id="word" type="text"/>
-                        </label>
-                        <label>
-                            Definition -
-                            <input id="definition" type="text"/>
-                        </label>
-                        <input type="submit" value="Submit" onClick={() => this.SubmitNewCard()}/>
-                    </form>
-                </div> */}
+          
             </div>
         )
     }
